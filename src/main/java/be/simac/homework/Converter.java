@@ -4,9 +4,21 @@ package be.simac.homework;
  * Created by Mschneider on 22-05-17.
  */
 public class Converter {
-    public String numberToString(Object number){
-        String transform=String.valueOf(number);
-        return transform;
+    public static String numberToString(Object number) throws ConverterException {
+        if(number==null){
+            return "";
+        }
+        else if(number.getClass().getName()=="String"){
+            return number.toString();
+        }
+        else if(!(number instanceof Number)){
+            throw new ConverterException("Please enter a number");
+        }
+        else{
+            String transform=String.valueOf(number);
+            return transform;
+
+        }
     }
 
 }
