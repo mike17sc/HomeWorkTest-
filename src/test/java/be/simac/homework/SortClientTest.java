@@ -24,28 +24,27 @@ public class SortClientTest {
         assertThat(list.get(2).getName()).isEqualTo("Mike");
         assertThat(list.get(2).getAge()).isEqualTo(19);
     }
+
     @Test
     public void sortClientNullListTest() throws MyException {
         List<Client> list = null;
         try {
             list = SortClient.sortClient(list);
-        } catch (MyException e){
+        } catch (MyException e) {
             assertThat(e).hasMessage("List can't be null");
         }
     }
+
     @Test
     public void sortClientNullClientTest() throws MyException {
         List<Client> list = new ArrayList<>();
         list.add(null);
         list.add(new Client("Annick", 36));
         list.add(new Client("Mike", 6));
-        try{
+        try {
             list = SortClient.sortClient(list);
-        }
-        catch(MyException e){
+        } catch (MyException e) {
             assertThat(e).hasMessage("List can't contain null client");
         }
-
-
     }
 }
