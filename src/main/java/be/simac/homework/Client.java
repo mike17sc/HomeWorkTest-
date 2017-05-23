@@ -26,4 +26,10 @@ public class Client {
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+
+
+    }
 }
