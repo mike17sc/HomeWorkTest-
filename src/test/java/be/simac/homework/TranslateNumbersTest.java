@@ -24,9 +24,36 @@ public class TranslateNumbersTest {
         List<Integer> listNumbers = new ArrayList<>();
         listNumbers.add(null);
         listNumbers.add(8);
-        List<String>result= TranslateNumbers.translateNumbers(listNumbers);
-        for (int i = 0; i < result.size(); i++) {
-            System.out.println(result.get(i));
+        try{
+            List<String>result= TranslateNumbers.translateNumbers(listNumbers);
         }
+        catch(MyException e){
+            assertThat(e).hasMessage("Can't insert null object into list");
+        }
+
+    }
+    @Test
+    public void translateNumbersNullListTest() throws MyException{
+        List<Integer> listNumbers = null;
+        try{
+            List<String>result= TranslateNumbers.translateNumbers(listNumbers);
+        }
+        catch(MyException e){
+            assertThat(e).hasMessage("List musn't be null or empty");
+        }
+
+    }
+    @Test
+    public void translateNumbersOutOfScopeTest() throws MyException{
+        List<Integer> listNumbers = new ArrayList<>();
+        listNumbers.add(21);
+        listNumbers.add(8);
+        try{
+            List<String>result= TranslateNumbers.translateNumbers(listNumbers);
+        }
+        catch(MyException e){
+            assertThat(e).hasMessage("Can only convert between 1-10");
+        }
+
     }
 }

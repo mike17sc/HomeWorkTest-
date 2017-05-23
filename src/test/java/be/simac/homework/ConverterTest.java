@@ -34,8 +34,12 @@ public class ConverterTest {
     @Test
     public void testNumberToStringString() throws MyException {
         String number = "Test";
-        String result = Converter.numberToString(number);
-        assertThat(result).isEqualTo("Test");
+        try {
+            String result = Converter.numberToString(number);
+        } catch (MyException e) {
+            assertThat(e).hasMessage("Please enter a number");
+        }
+
     }
 
     @Test
@@ -44,9 +48,10 @@ public class ConverterTest {
         String result = Converter.numberToString(number);
         assertThat(result).isEqualTo("");
     }
+
     @Test
     public void testNumberToStringHashSet() throws MyException {
-        List<Integer> number= new ArrayList<>();
+        List<Integer> number = new ArrayList<>();
         number.add(8);
         number.add(5);
         String result = Converter.numberToString(number);
