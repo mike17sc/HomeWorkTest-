@@ -5,7 +5,7 @@ import java.util.*;
  * Created by Mschneider on 23-05-17.
  */
 public class SortClient {
-    public List<Client> sortClient(List<Client> listClient){
+    public static List<Client> sortClient(List<Client> listClient){
         Collections.sort(listClient,new Comparator<Client>(){
            @Override
             public int compare(Client clientOne,Client clientTwo){
