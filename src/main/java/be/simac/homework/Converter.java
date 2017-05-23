@@ -4,7 +4,7 @@ package be.simac.homework;
  * Created by Mschneider on 22-05-17.
  */
 public class Converter {
-    public static String numberToString(Object number) throws ConverterException {
+    public static String numberToString(Object number) throws MyException {
         if(number==null){
             return "";
         }
@@ -12,12 +12,11 @@ public class Converter {
             return number.toString();
         }
         else if(!(number instanceof Number)){
-            throw new ConverterException("Please enter a number");
+            throw new MyException("Please enter a number");
         }
         else{
             String transform=String.valueOf(number);
             return transform;
-
         }
     }
 
