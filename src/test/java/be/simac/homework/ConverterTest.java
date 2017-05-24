@@ -11,26 +11,36 @@ import static org.assertj.core.api.Assertions.*;
  */
 public class ConverterTest {
     @Test
+    /**
+     * Stardard transform int in string
+     */
     public void testNumberToStringInt() throws MyException {
         int number = 5;
         String result = Converter.numberToString(number);
         assertThat(result).isEqualTo("5");
     }
 
+    /**
+     * standard transform double in string
+     */
     @Test
     public void testNumberToStringDouble() throws MyException {
         double number = 5.25;
         String result = Converter.numberToString(number);
         assertThat(result).isEqualTo("5.25");
     }
-
+    /**
+     * standard transform float in string
+     */
     @Test
     public void testNumberToStringFloat() throws MyException {
         float number = -5;
         String result = Converter.numberToString(number);
         assertThat(result).isEqualTo("-5.0");
     }
-
+    /**
+     * get error if string try to be converted in string
+     */
     @Test
     public void testNumberToStringString() throws MyException {
         String number = "Test";
@@ -42,6 +52,9 @@ public class ConverterTest {
 
     }
 
+    /**
+     *get error if trying to transform a null to string
+     */
     @Test
     public void testNumberToStringNull() throws MyException {
         String number = null;
