@@ -29,6 +29,7 @@ public class ConverterTest {
         String result = Converter.numberToString(number);
         assertThat(result).isEqualTo("5.25");
     }
+
     /**
      * standard transform float in string
      */
@@ -38,6 +39,7 @@ public class ConverterTest {
         String result = Converter.numberToString(number);
         assertThat(result).isEqualTo("-5.0");
     }
+
     /**
      * get error if string try to be converted in string
      */
@@ -53,7 +55,7 @@ public class ConverterTest {
     }
 
     /**
-     *get error if trying to transform a null to string
+     * get error if trying to transform a null to string
      */
     @Test
     public void testNumberToStringNull() throws MyException {
@@ -62,6 +64,10 @@ public class ConverterTest {
         assertThat(result).isEqualTo("");
     }
 
+    /**
+     *
+     * @throws MyException if trying to transform a not numeric parameter
+     */
     @Test
     public void testNumberToStringHashSet() throws MyException {
         List<Integer> number = new ArrayList<>();
