@@ -6,12 +6,12 @@ import java.time.temporal.ChronoUnit;
 
 /**
  * Created by Mschneider on 22-05-17.
+ * Class to get days between 2 dates
  */
-public class DateDiff {
+ class DateDiff {
     /**
-     *
      * @param beginDate enter a local date from begin
-     * @param endDate enter a local date to end
+     * @param endDate   enter a local date to end
      * @return a long who is the difference between the 2 dates
      * @throws MyException if one of the 2 dates are null throw an exception
      */
@@ -19,9 +19,8 @@ public class DateDiff {
         try {
             long daysDiff = ChronoUnit.DAYS.between(beginDate, endDate);
             return Math.abs(daysDiff);
-        }
-        catch(NullPointerException e){
-           throw new MyException("Parameter shouldn't be null");
+        } catch (NullPointerException e) {
+            throw new MyException("Parameter shouldn't be null");
         }
 
     }

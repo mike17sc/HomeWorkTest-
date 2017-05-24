@@ -2,10 +2,10 @@ package be.simac.homework;
 
 /**
  * Created by Mschneider on 23-05-17.
+ * Class to remove white spaces
  */
 public class RemoveWhiteSpace {
     /**
-     *
      * @param text text where white space needs to be removed
      * @return text without white spaces
      */
