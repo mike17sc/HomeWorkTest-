@@ -67,7 +67,10 @@ public class ConverterTest {
         List<Integer> number = new ArrayList<>();
         number.add(8);
         number.add(5);
-        String result = Converter.numberToString(number);
-        assertThat(result).isEqualTo("25");
+        try {
+            String result = Converter.numberToString(number);
+        } catch (MyException e) {
+            assertThat(e).hasMessage("Please enter a number");
+        }
     }
 }
