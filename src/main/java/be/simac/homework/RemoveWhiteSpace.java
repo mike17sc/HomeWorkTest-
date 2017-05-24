@@ -1,5 +1,7 @@
 package be.simac.homework;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * Created by Mschneider on 23-05-17.
  * Class to remove white spaces
@@ -10,10 +12,6 @@ public class RemoveWhiteSpace {
      * @return text without white spaces
      */
     public static String removeWhiteSpace(String text) {
-        if (text != null) {
-            return text.replaceAll(" ", "");
-        } else {
-            return "";
-        }
+        return StringUtils.deleteWhitespace(text);
     }
 }

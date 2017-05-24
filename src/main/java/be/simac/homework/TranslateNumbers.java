@@ -9,7 +9,7 @@ public class TranslateNumbers {
     public static List translateNumbers(List<Integer> listNumbers) throws MyException {
         String[] numbers = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
         List<String> convertedList = new ArrayList<>();
-        if(listNumbers==null ||listNumbers.size()==0){
+        if(listNumbers==null ||listNumbers.isEmpty()){
             throw new MyException("List musn't be null or empty");
         }
         boolean flag=false;
@@ -24,7 +24,7 @@ public class TranslateNumbers {
                     throw new MyException("Can't insert null object into list");
                 }
             }
-            if(flag==false){
+            if(!flag){
                 throw new MyException("Can only convert between 1-10");
             }
 

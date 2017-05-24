@@ -6,11 +6,19 @@ package be.simac.homework;
  */
 public class Converter {
     /**
-     * @param number take as paprameter any number to be converted
+     * @param number take as parameter any number to be converted
      * @return the number into a string
      * @throws MyException if paramater isn't an number throw an exception
      */
-    public static String numberToString(Object number) throws MyException {
+    public static String numberToString(Number number) throws MyException {
+        // Optimized code
+        if (number != null) {
+            return String.valueOf(number);
+        } else {
+            throw new MyException("Please enter a number");
+        }
+        // Mike code
+        /*
         if (number == null) {
             return "";
         } else if (!(number instanceof Number)) {
@@ -18,6 +26,7 @@ public class Converter {
         } else {
             return String.valueOf(number);
         }
+        */
     }
 
 }

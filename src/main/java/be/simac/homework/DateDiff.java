@@ -16,12 +16,11 @@ import java.time.temporal.ChronoUnit;
      * @throws MyException if one of the 2 dates are null throw an exception
      */
     public static long dateDiff(LocalDate beginDate, LocalDate endDate) throws MyException {
-        try {
+        if(beginDate != null && endDate != null){
             long daysDiff = ChronoUnit.DAYS.between(beginDate, endDate);
             return Math.abs(daysDiff);
-        } catch (NullPointerException e) {
+        } else {
             throw new MyException("Parameter shouldn't be null");
         }
-
     }
 }

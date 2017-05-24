@@ -5,14 +5,14 @@ import org.omg.CORBA.Object;
 /**
  * Created by Mschneider on 23-05-17.
  */
-public class Client {
+public class Client implements Comparable<Client>  {
     public Client(String name, int age) {
         this.age = age;
         this.name = name;
     }
 
-    String name;
-    int age;
+    private String name;
+    private int age;
 
     public String getName() {
         return name;
@@ -29,7 +29,7 @@ public class Client {
     public void setAge(int age) {
         this.age = age;
     }
-    /*
+
     @Override
     public int compareTo(Client autreClient) {
 
@@ -40,7 +40,8 @@ public class Client {
         else{
             return compare;
         }
-    }*/
+    }
+
 }
 
 

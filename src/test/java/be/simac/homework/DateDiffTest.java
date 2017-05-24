@@ -10,6 +10,7 @@ import static org.assertj.core.api.Assertions.*;
  * Created by Mschneider on 22-05-17.
  */
 public class DateDiffTest {
+
     @Test
     public void testDateDiffEarlyDateFirst() throws MyException {
         LocalDate today = LocalDate.now();

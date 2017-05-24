@@ -22,9 +22,9 @@ class SortClient {
             }
         }
         listClient.sort((clientOne, clientTwo) -> {
-            int compare = clientOne.name.compareTo(clientTwo.name);
+            int compare = clientOne.getName().compareTo(clientTwo.getName());
             if (compare == 0) {
-                return clientOne.age - clientTwo.age;
+                return clientOne.getAge() - clientTwo.getAge();
             } else {
                 return compare;
             }
