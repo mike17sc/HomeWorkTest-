@@ -11,6 +11,11 @@ import java.util.*;
  */
 
 public class SortClientTest {
+    /**
+     * add stadard input 3 names with 3 ages
+     *
+     * @throws MyException
+     */
     @Test
     public void sortClientTest() throws MyException {
         List<Client> list = new ArrayList<>();
@@ -26,6 +31,9 @@ public class SortClientTest {
     }
 
     @Test
+    /**
+     * Try with a list = null that should throw an exception
+     */
     public void sortClientNullListTest() throws MyException {
         List<Client> list = null;
         try {
@@ -35,6 +43,10 @@ public class SortClientTest {
         }
     }
 
+    /**
+     * try with an element of the list = null
+     * @throws MyException
+     */
     @Test
     public void sortClientNullClientTest() throws MyException {
         List<Client> list = new ArrayList<>();
